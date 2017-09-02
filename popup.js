@@ -22,9 +22,9 @@ function getMoreVisitInfo(event) {
         var table = card.nextElementSibling.firstElementChild.firstElementChild;
         for (var i = 0; i < historyItems.length; i++) {
             var historyItem = historyItems[i];
-            console.log(historyItem);
             var row = table.insertRow(1);
             var cell1 = row.insertCell(0);
+            if (historyItem.title.length === 0) historyItem.title = historyItem.url
             cell1.innerHTML = '<a  title="' + historyItem.url + '" href="' + historyItem.url + '">' + historyItem.title + '</a>';
         }
     });
@@ -45,17 +45,18 @@ function searchHistory(url) {
             html += '<div class="card-header" role="tab" id="heading' + index + '">';
             html += '<h7 class="mb-0">';
             html += '<a data-toggle="collapse" href="#collapse' + index + '" aria-expanded="false" aria-controls="collapse' + index + '">';
-            html += 'Visited on ' + date.toLocaleDateString() + date.toLocaleTimeString();
+            html += 'Visited on ' + date.toLocaleDateString() + ' - ' + date.toLocaleTimeString();
             html += '</a>';
             html += '</h7>';
             html += '</div>';
             html += '<div id="collapse' + index + '" class="collapse" role="tabpanel" aria-labelledby="heading' + index + '" data-parent="#accordion">';
             html += '<div class="card-body">';
-            html += '<table class="table">';
+            html += '<table class="table table-striped table-hover table-sm">';
             html += '<thead>';
             html += '<tr>';
             html += '<th>';
-            html += 'Site';
+            html += '</th>';
+            html += '<th>';
             html += '</th>';
             html += '</tr>';
             html += '</thead>';
