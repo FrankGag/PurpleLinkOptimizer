@@ -1,24 +1,31 @@
 ﻿<!doctype html>
 <html>
 <head>
-    <title>Getting Started Extension's Popup</title>
+    <title>Purple Link Optimizer</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src="jquery-3.2.1.slim.min.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="popup.js"></script>
     <style>
         body {
-            font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-            font-size: 100%;
+            min-width: 500px;
         }
-        #status {
-            white-space: pre;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            max-width: 400px;
+        .card-header {
+            padding: .25rem 1.25rem;
         }
+        .card-body {
+             padding: .25rem 1.25rem;
+        }
+        .table td, .table th {
+            padding: .25rem;
+        }
+
     </style>
-    <script src="popup.js"></script>
 </head>
 <body>
-<div id="history">history</div>
-<img id="image-result" hidden>
+    <div id="accordion" role="tablist">
+    </div>
 </body>
 </html>
 
